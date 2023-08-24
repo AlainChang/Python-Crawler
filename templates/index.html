@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../static/indexStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn工作爬蟲</title>
+</head>
+
+<body>
+    <div id="loadingMessage" style="display: none;">
+        <img src="../static/loading.gif" alt="Loading...">
+    </div>
+    <div class="flex_container">
+        <div class="container">
+            <h1>LinkedIn｜工作爬蟲</h1>
+            <form action="/titlepage" onsubmit="showLoadingMessage()">
+                <button class="two-line-button">LinkedIn<br>工作爬蟲</button>
+            </form>
+            <form action="/localdash" onsubmit="showLoadingMessage()">
+                <button class="btn">工作地點分析</button>
+            </form>
+            <form action="/companydash" onsubmit="showLoadingMessage()">
+                <button class="btn" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">公司職缺分析</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- <script>
+        function showLoadingMessage() {
+            var loadingMessage = document.getElementById("loadingMessage");
+            loadingMessage.style.display = "block";
+
+            // 鎖定畫面
+            document.body.style.pointerEvents = "none";
+            document.body.style.opacity = "0.5";
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/localdash", true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.message === "搜尋完成") {
+                        // 搜尋完成，停止顯示訊息並解除畫面鎖定
+                        loadingMessage.style.display = "none";
+                    }
+                }
+            };
+            xhr.send();
+
+            return true;
+        }
+    </script> -->
+
+</body>
+</html>

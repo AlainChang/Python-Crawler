@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../static/crawlerStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn工作爬蟲</title>
+</head>
+<script>
+    window.alert("職缺資料總共 {{titlen}} 筆")
+</script>
+<body>
+    <div class="flex_container">
+        <div class="top-container">
+            <div class="banner">
+                <h1><a href="/">LinkedIn｜工作爬蟲</a></h1>
+            </div>
+            <div class="button-container">
+                <div class="form-inline" >
+                    <form action="/localdash" >
+                        <button class="btn" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px;">地點分析</button>
+                    </form>
+                </div>
+                <div class="form-inline" >
+                    <form action="/companydash" >
+                        <button class="btn" style="border-top-right-radius: 10px; border-bottom-right-radius: 10px;">公司職缺分析</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        <div class="content-container">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>職位名稱(總共{{titlen}}筆)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in titlet %}
+                        <tr>
+                            <td>{{ i }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>企業名稱</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in subt %}
+                        <tr>
+                            <td>{{ i }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>公司地點</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in local %}
+                        <tr>
+                            <td>{{ i }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+</body>
+</html>

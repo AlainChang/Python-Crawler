@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="../static/secondpageStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn工作爬蟲</title>
+</head>
+
+<body>
+    <div class="flex_container">
+        <div class="top-container">
+            <div class="banner">
+                <h1><a href="/">LinkedIn｜工作爬蟲</a></h1>
+            </div>
+            <form action="/dash">
+                <button class="btn">圖表</button>
+            </form>
+        </div>
+
+        <div class="content-container">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>職位名稱</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in titlet %}
+                        <tr>
+                            <td>{{ i }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>企業名稱</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for i in clasa%}
+                        <tr>
+                            <td>{{ i }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>公司地點</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for i in subt%}
+                        <tr>
+                            <td>{{ i }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
